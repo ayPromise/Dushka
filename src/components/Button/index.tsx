@@ -1,13 +1,12 @@
-import type { PropsWithChildren } from "react"
 import styles from "./Button.module.scss"
 
-interface ButtonProps extends PropsWithChildren {
-    type?: "secondary" | "default"
+interface ButtonProps extends React.HTMLProps<HTMLButtonElement> {
+    type?: "secondary" | "default",
 }
 
-const Button: React.FC<ButtonProps> = ({ children, type }) => {
+const Button: React.FC<ButtonProps> = ({ children, type = "default", ...props }) => {
     return (
-        <button type="button" className={`${styles.button} ${type === "secondary" ? styles.secondary : ""}`}>{children}</button>
+        <button {...props} type="button" className={`${styles.button} ${type === "secondary" ? styles.secondary : ""}`}>{children}</button>
     )
 }
 
