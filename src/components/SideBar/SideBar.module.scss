@@ -1,0 +1,46 @@
+@use "../../styles/variables";
+
+.sidebar{
+    @include variables.shared-padding;
+    background-color: variables.$sidebar-background;
+    border-top: 2px solid variables.$header-background;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    .addForm{
+        display: flex;
+        flex-direction: column;
+        gap:10px;
+        margin-bottom: 50px;
+
+        .addTitle{
+            font-size: 1.5rem;
+        }
+    
+        .addInput{
+            border: 2px solid variables.$border-color;
+            border-radius: 5px;
+            padding-block: 13px;
+            padding-inline: 5px;
+        }
+    
+    }
+
+
+    .sideActionsContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    @media(min-width: variables.$layout-breakpoint-medium){
+        border-bottom-left-radius: 0px;
+        border-top: 0px;
+    }
+
+}
