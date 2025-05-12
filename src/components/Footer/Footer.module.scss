@@ -1,0 +1,20 @@
+@use "../../styles/variables";
+
+.footer{
+    width: 100%;
+    text-align: end;
+
+    .span{
+        color:variables.$dimmed-text;
+
+    }
+
+    .link{
+        color:darken(variables.$dimmed-text, 5);
+        transition: color variables.$transition-duration;
+
+        &:hover{
+            color:darken(variables.$dimmed-text, 10);
+        }
+    }
+}
