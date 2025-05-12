@@ -47,11 +47,11 @@ body{
                     min-height: 500px;
                     max-height: 500px;
     
-                    ul{
+                    > :first-child{
                         width: 75%;
                     }
     
-                    aside{
+                    > :nth-child(2){
                         width: 25%;
                     }
                 }
