@@ -1,5 +1,6 @@
 import type { TodoItem } from "../../types/TodoItem"
 import styles from "./Header.module.scss"
+import Tabs from "./Tabs"
 
 interface HeaderProps {
     todos: TodoItem[]
@@ -14,6 +15,8 @@ const Header: React.FC<HeaderProps> = ({ todos }) => {
                 <div className={styles.circle}></div>
                 <div className={styles.circle}></div>
             </div>
+
+            <Tabs />
             <div><strong>{completedItems.length}</strong> / {todos.length} completed</div>
         </header>
     )
