@@ -1,0 +1,158 @@
+@use "../../styles/variables";
+
+.feedbackForm {
+  @include variables.shared-padding;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: variables.$main-background;
+
+  .formTitle {
+    font-size: 1.5rem;
+    color: variables.$main-text;
+    margin-bottom: 10px;
+  }
+
+  .label {
+    font-weight: bold;
+    color: variables.$main-text;
+  }
+
+  .input,
+  .textarea {
+    border: 2px solid variables.$border-color;
+    border-radius: 5px;
+    padding-block: 13px;
+    padding-left: 10px;
+    font-style: italic;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+
+    &::placeholder {
+      color: lighten(variables.$main-text, 70);
+    }
+  }
+
+  .textarea {
+    height: 100px;
+    resize: none;
+  }
+
+  .sendButton {
+    background-color: variables.$button-background;
+    color: variables.$white-text;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color variables.$transition-duration;
+
+    &:hover {
+      background-color: variables.$button-dimmed-background;
+    }
+  }
+}
+
+
+/// Project Card
+
+.projectCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 10px;
+
+  padding-block: 20px;
+  padding-inline: 50px;
+  
+  text-decoration: none;
+
+
+  .iconWrapper {
+    font-size: 2rem;
+    color: variables.$button-background;
+    margin-bottom: 10px;
+  }
+
+  .projectTitle {
+    font-size: 2rem;
+    color: variables.$main-text;
+    margin-bottom: 5px;
+  }
+
+  .projectDescription {
+    font-size: 0.9rem;
+    color: variables.$main-text;
+    margin-bottom: 5px;
+  }
+
+  .techStack {
+    font-size: 0.85rem;
+    color: variables.$dimmed-text;
+    margin-bottom: 10px;
+  }
+
+  .githubLink {
+    position: absolute;
+    top: -30px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: variables.$button-background;
+    font-weight: bold;
+  }
+}
+
+
+/// Main
+.feedbackPage {
+  background-color: variables.$sidebar-background;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 40px;
+  width: 100%;
+
+  > :nth-child(2){
+    border-right: 15px solid variables.$sidebar-background;
+    border-top: 15px solid variables.$sidebar-background;
+  }
+
+  > :nth-child(3){
+    border-left: 15px solid variables.$sidebar-background;
+    border-bottom: 15px solid variables.$sidebar-background;
+  }
+
+  > :nth-child(4){
+    border-right: 15px solid variables.$sidebar-background;
+    border-bottom: 15px solid variables.$sidebar-background;
+  }
+}
+
+.feedbackBlock {
+  grid-column: 1;
+  grid-row: 1;
+  background-color: variables.$main-background;
+}
+
+.projectBlock{
+  background-color: darken(variables.$header-background, 5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: background-color variables.$transition-duration;
+
+  cursor: pointer;
+
+  &:hover{
+    background-color: darken(variables.$sidebar-background, 5);
+  }
+
+}
