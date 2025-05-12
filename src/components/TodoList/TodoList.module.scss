@@ -1,0 +1,53 @@
+@use "../../styles/variables";
+
+
+.todoList{
+    background-color: variables.$todo-list-background;
+    list-style-type: none;
+    font-size: 1.3rem;
+    overflow:auto;
+
+    .todoItem{
+        @include variables.shared-padding;
+        border-bottom:2px solid variables.$header-background;
+        
+        display: flex;
+        justify-content: space-between;
+
+        .removeIcon{
+            color: variables.$red-text;
+            background-color: variables.$sidebar-background;
+            border:none;
+
+            padding: 7px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            transition: color variables.$transition-duration, background-color variables.$transition-duration;
+
+            &:hover{
+                color: darken(variables.$red-text, 10);
+                background-color: darken(variables.$sidebar-background, 5);
+            }
+        }
+    }
+
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+      
+    &::-webkit-scrollbar-track {
+        background: variables.$header-background;
+    }
+      
+    &::-webkit-scrollbar-thumb {
+        background: variables.$app-background;
+        border-radius: 5px;
+    }
+      
+    &::-webkit-scrollbar-thumb:hover {
+        background: darken(variables.$app-background, 10);
+    }
+
+}
