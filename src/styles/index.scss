@@ -31,27 +31,32 @@ body{
         main{
             min-width: 300px;
             width: 1000px;
-            height: 500px;
-        }
-        
-        section{
+            min-height: 500px;
+
             display: flex;
             flex-direction: column;
-            height: 100%;
-        
-            @media(min-width: variables.$layout-breakpoint-medium){
-                flex-direction: row;
 
-                ul{
-                    width: 75%;
-                }
+            section{
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                max-height: 700px;
 
-                aside{
-                    width: 25%;
+                @media(min-width: variables.$layout-breakpoint-medium){
+                    flex-direction: row;
+                    min-height: 500px;
+                    max-height: 500px;
+    
+                    ul{
+                        width: 75%;
+                    }
+    
+                    aside{
+                        width: 25%;
+                    }
                 }
             }
         }
-    
     }
 
 }
