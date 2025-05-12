@@ -6,6 +6,7 @@ import useTodoStore from "./hooks/useTodoStore"
 import TodoListPage from "./pages/TodoList/page"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import FeedbackPage from "./pages/Feedback/page"
+import NotFoundPage from "./pages/NotFound/page"
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
               path="/"
               element={<TodoListPage todos={todos} handleRemoveItem={handleRemoveItem} updateItem={updateItem} handleAddItem={handleAddItem} />} />
             <Route path="/feedback" element={<FeedbackPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Footer />
         </main>

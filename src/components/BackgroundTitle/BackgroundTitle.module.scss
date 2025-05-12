@@ -1,6 +1,6 @@
 @use "../../styles/variables";
 
-h1{
+.header{
     text-transform: uppercase;
     color:variables.$dimmed-text;
     font-size: 5rem;
