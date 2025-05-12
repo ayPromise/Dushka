@@ -1,0 +1,57 @@
+@use './variables';
+
+@font-face {
+    font-family: "Share Tech";
+    src: url("/fonts/ShareTech-Regular.ttf");
+}
+
+
+:root{
+    font-family: "Share Tech", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+ul,h1, h2, h3, h4{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    background-color: variables.$app-background;
+    color: variables.$main-text;
+
+    .container{
+        padding-block: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        main{
+            min-width: 300px;
+            width: 1000px;
+            height: 500px;
+        }
+        
+        section{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        
+            @media(min-width: variables.$layout-breakpoint-medium){
+                flex-direction: row;
+
+                ul{
+                    width: 75%;
+                }
+
+                aside{
+                    width: 25%;
+                }
+            }
+        }
+    
+    }
+
+}
