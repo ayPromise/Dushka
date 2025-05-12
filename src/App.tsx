@@ -1,20 +1,15 @@
-import { useState } from "react"
 import BackgroundTitle from "./components/BackgroundTitle"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
 import SideBar from "./components/SideBar"
 import TodoList from "./components/TodoList"
 import type { TodoItem } from "./types/TodoItem"
+import useTodoStore from "./hooks/useTodoStore"
 
 
 function App() {
 
-  const [todos, setTodos] = useState<TodoItem[]>([
-    {
-      content: "Yeah baby",
-      completed: false
-    }
-  ])
+  const [todos, setTodos] = useTodoStore()
 
   const updateItem = (itemIndex: number, newItem: TodoItem) => {
     const newTodos: TodoItem[] = todos.map((item, index) => {
@@ -28,8 +23,8 @@ function App() {
   }
 
   const handleAddItem = (newItem: TodoItem) => {
-    setTodos((prev) => [
-      ...prev,
+    setTodos([
+      ...todos,
       newItem
     ])
   }
@@ -45,12 +40,16 @@ function App() {
 
       <main>
         <Header todos={todos} />
+
         <section>
           <TodoList todos={todos} handleRemoveItem={handleRemoveItem} updateItem={updateItem} />
           <SideBar handleAddItem={handleAddItem} />
         </section>
+
         <Footer />
       </main>
+
+
     </div>
   )
 }
