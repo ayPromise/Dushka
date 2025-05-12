@@ -1,10 +1,11 @@
 import BackgroundTitle from "./components/BackgroundTitle"
 import Footer from "./components/Footer"
 import Header from "./components/Header"
-import SideBar from "./components/SideBar"
-import TodoList from "./components/TodoList"
 import type { TodoItem } from "./types/TodoItem"
 import useTodoStore from "./hooks/useTodoStore"
+import TodoListPage from "./pages/TodoList/page"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import FeedbackPage from "./pages/Feedback/page"
 
 
 function App() {
@@ -38,16 +39,19 @@ function App() {
     <div className="container">
       <BackgroundTitle />
 
-      <main>
-        <Header todos={todos} />
+      <BrowserRouter>
+        <main>
+          <Header todos={todos} />
+          <Routes>
+            <Route
+              path="/"
+              element={<TodoListPage todos={todos} handleRemoveItem={handleRemoveItem} updateItem={updateItem} handleAddItem={handleAddItem} />} />
+            <Route path="/feedback" element={<FeedbackPage />} />
+          </Routes>
+          <Footer />
+        </main>
+      </BrowserRouter>
 
-        <section>
-          <TodoList todos={todos} handleRemoveItem={handleRemoveItem} updateItem={updateItem} />
-          <SideBar handleAddItem={handleAddItem} />
-        </section>
-
-        <Footer />
-      </main>
 
 
     </div>
