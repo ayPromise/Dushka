@@ -13,6 +13,21 @@
         
         display: flex;
         justify-content: space-between;
+        align-items: center;
+
+        cursor: pointer;
+        user-select: none;
+
+        transition: background-color variables.$transition-duration;
+        
+        &:hover{
+            background-color: darken(variables.$todo-list-background, 5);
+        }
+
+        &.completed{
+            background-color: rgb(157, 243, 157);
+            text-decoration: line-through;
+        }
 
         .removeIcon{
             color: variables.$red-text;

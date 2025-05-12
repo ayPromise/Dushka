@@ -16,6 +16,17 @@ function App() {
     }
   ])
 
+  const updateItem = (itemIndex: number, newItem: TodoItem) => {
+    const newTodos: TodoItem[] = todos.map((item, index) => {
+      if (index === itemIndex)
+        return newItem
+
+      return item
+    })
+
+    setTodos(newTodos)
+  }
+
   const handleAddItem = (newItem: TodoItem) => {
     setTodos((prev) => [
       ...prev,
@@ -33,9 +44,9 @@ function App() {
       <BackgroundTitle />
 
       <main>
-        <Header />
+        <Header todos={todos} />
         <section>
-          <TodoList todos={todos} handleRemoveItem={handleRemoveItem} />
+          <TodoList todos={todos} handleRemoveItem={handleRemoveItem} updateItem={updateItem} />
           <SideBar handleAddItem={handleAddItem} />
         </section>
         <Footer />
