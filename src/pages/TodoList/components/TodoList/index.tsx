@@ -1,5 +1,5 @@
 import { ImCross } from "react-icons/im"
-import type { TodoItem } from "../../types/TodoItem"
+import type { TodoItem } from "../../../../types/TodoItem"
 import styles from "./TodoList.module.scss"
 
 interface TodoListProps {

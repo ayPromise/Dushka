@@ -1,8 +1,8 @@
-@use "../../styles/variables";
+@use "../../../../styles/variables";
 
 
 .todoList{
-    background-color: variables.$todo-list-background;
+    background-color: variables.$main-background;
     list-style-type: none;
     font-size: 1.3rem;
     overflow:auto;
@@ -26,7 +26,7 @@
         transition: background-color variables.$transition-duration;
         
         &:hover{
-            background-color: darken(variables.$todo-list-background, 5);
+            background-color: darken(variables.$main-background, 5);
         }
 
         &.completed{
