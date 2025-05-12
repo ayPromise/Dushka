@@ -1,0 +1,26 @@
+$app-background: #F1D4B4 !default;
+$header-background: #FCF5ED !default;
+$sidebar-background:#FDFCF7 !default;
+$button-background:#49392A !default;
+$button-dimmed-background:#463C33 !default;
+$actions-background:#ABA49A !default;
+$todo-list-background:white !default;
+
+$border-color:#F8F8F8 !default;
+
+$main-text:#171612 !default;
+$dimmed-text:#DFC4A7 !default;
+$red-text: #f05555 !default;
+$white-text: #ffff !default;
+
+
+$transition-duration: 0.2s;
+
+$layout-breakpoint-small:320px;
+$layout-breakpoint-medium:720px;
+$layout-breakpoint-large:1024px;
+
+@mixin shared-padding{
+    padding-inline: 25px;
+    padding-block: 15px;
+}
