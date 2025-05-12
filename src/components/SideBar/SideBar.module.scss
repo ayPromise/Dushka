@@ -26,7 +26,12 @@
             border: 2px solid variables.$border-color;
             border-radius: 5px;
             padding-block: 13px;
-            padding-inline: 5px;
+            padding-left: 10px;
+            font-style: italic;
+
+            &::placeholder{
+                color: lighten(variables.$main-text, 70);
+            }
         }
     
     }
