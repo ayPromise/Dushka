@@ -1,0 +1,11 @@
+@use "../../styles/variables";
+
+h1{
+    text-transform: uppercase;
+    color:variables.$dimmed-text;
+    font-size: 5rem;
+
+    position:absolute;
+    top: 14px;
+    z-index: -1;
+}
