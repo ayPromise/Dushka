@@ -42,6 +42,14 @@
 
             &.active{
                 background-color: variables.$main-background;
+
+                &:hover{
+                    background-color: darken(variables.$main-background,5);
+                }
+            }
+
+            &:hover{
+                background-color: darken(variables.$main-background,25);
             }
         }
     }
