@@ -63,6 +63,10 @@
       color: variables.$main-text;
       margin-bottom: 10px;
     }
+
+    .formHighlighted{
+      color:variables.$dimmed-text;
+    }
   
     .label {
       font-weight: bold;

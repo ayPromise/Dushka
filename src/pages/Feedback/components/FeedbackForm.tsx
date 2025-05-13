@@ -24,7 +24,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ onSend }) => {
 
     return (
         <div className={styles.feedbackForm}>
-            <h2 className={styles.formTitle}>Feedback</h2>
+            <h2 className={styles.formTitle}>Leave your feedback or <span className={styles.formHighlighted}>take a look at my other projects</span></h2>
             <InputField
                 label="Name"
                 id="name"
