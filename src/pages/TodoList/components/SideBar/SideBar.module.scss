@@ -3,8 +3,7 @@
 .sidebar{
     @include variables.shared-padding;
     background-color: variables.$sidebar-background;
-    border-top: 2px solid variables.$header-background;
-
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
