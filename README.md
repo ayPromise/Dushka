@@ -2,6 +2,7 @@
 # Todo Dushka App
 
 A simple yet beautiful Todo application built with React, designed as a part of reminding myself what developing on plain React is ;)
+https://aypromise.github.io/Dushka/
 
 ## ✨Features Demo
 
