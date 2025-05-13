@@ -3,6 +3,7 @@
 
 .feedbackPage {
   background-color: variables.$sidebar-background;
+  z-index: 20;
 }
 
 .gridContainer {
@@ -25,6 +26,23 @@
   > :nth-child(4){
     border-right: 15px solid variables.$sidebar-background;
     border-bottom: 15px solid variables.$sidebar-background;
+  }
+
+  @media(max-width: 1000px){
+    display: flex;
+    flex-direction: column;
+
+    > :nth-child(2){
+      border: 15px solid variables.$sidebar-background;
+    }
+  
+    > :nth-child(3){
+      border: 15px solid variables.$sidebar-background;
+    }
+  
+    > :nth-child(4){
+      border: 15px solid variables.$sidebar-background;
+    }
   }
 }
 
@@ -149,6 +167,10 @@
       font-size: 1.5rem;
       color: variables.$button-background;
       font-weight: bold;
+
+      @media(max-width: 1000px){
+        top: 20px;
+      }
     }
   }
 

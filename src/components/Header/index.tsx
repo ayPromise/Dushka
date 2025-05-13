@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ todos }) => {
             </div>
 
             <Tabs />
-            <div><strong>{completedItems.length}</strong> / {todos.length} completed</div>
+            <div className={styles.counter}><strong>{completedItems.length}</strong> / {todos.length} completed</div>
         </header>
     )
 }

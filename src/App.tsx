@@ -45,9 +45,9 @@ function App() {
           <Header todos={todos} />
           <Routes>
             <Route
-              path="/"
+              path="/Dushka"
               element={<TodoListPage todos={todos} handleRemoveItem={handleRemoveItem} updateItem={updateItem} handleAddItem={handleAddItem} />} />
-            <Route path="/feedback" element={<FeedbackPage />} />
+            <Route path="/Dushka/feedback" element={<FeedbackPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Footer />

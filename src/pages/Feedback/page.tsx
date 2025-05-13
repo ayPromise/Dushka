@@ -45,8 +45,9 @@ const FeedbackPage = () => {
                 </div>
 
 
-                {projects.map((item) =>
-                    <div className={styles.projectBlock}>
+                {projects.map((item, index) =>
+                    <div className={styles.projectBlock}
+                        key={index}>
                         <ProjectCard
                             title={item.title}
                             description={item.description}
