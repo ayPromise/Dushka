@@ -33,7 +33,7 @@ const SideBar: React.FC<SideBarProps> = ({ handleAddItem }) => {
 
             {/** Add todo item */}
             <form className={styles.addForm}>
-                <h3 className={styles.addTitle}>Add a todo</h3>
+                <h3 className={styles.addTitle}>Add new task</h3>
                 <InputField
                     id="name"
                     type="text"

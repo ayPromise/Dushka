@@ -9,7 +9,7 @@ const Tabs = () => {
     const links = [
         {
             href: "/Dushka",
-            title: "Todo list"
+            title: "Tasks"
         },
         {
             href: "/Dushka/#/feedback",
