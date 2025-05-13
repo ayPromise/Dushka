@@ -33,15 +33,23 @@
     flex-direction: column;
 
     > :nth-child(2){
-      border: 15px solid variables.$sidebar-background;
+      border-top: none;
+      border-right: 15px solid variables.$sidebar-background;
+      border-left: 15px solid variables.$sidebar-background;
+      border-bottom: none;
     }
   
     > :nth-child(3){
-      border: 15px solid variables.$sidebar-background;
+      border-top: none;
+      border-right: 15px solid variables.$sidebar-background;
+      border-left: 15px solid variables.$sidebar-background;
+      border-bottom: none;
     }
   
     > :nth-child(4){
-      border: 15px solid variables.$sidebar-background;
+      border-top: none;
+      border-right: 15px solid variables.$sidebar-background;
+      border-left: 15px solid variables.$sidebar-background;
     }
   }
 }
