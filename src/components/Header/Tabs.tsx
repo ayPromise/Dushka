@@ -6,11 +6,11 @@ const Tabs = () => {
 
     const links = [
         {
-            href: "/",
+            href: "/Dushka",
             title: "Todo list"
         },
         {
-            href: "/feedback",
+            href: "/Dushka/feedback",
             title: "Contact me"
         }
     ]
