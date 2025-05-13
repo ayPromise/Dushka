@@ -10,7 +10,7 @@ const Tabs = () => {
             title: "Todo list"
         },
         {
-            href: "/Dushka/feedback",
+            href: "/Dushka/#/feedback",
             title: "Contact me"
         }
     ]

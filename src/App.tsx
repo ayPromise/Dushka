@@ -4,7 +4,7 @@ import Header from "./components/Header"
 import type { TodoItem } from "./types/TodoItem"
 import useTodoStore from "./hooks/useTodoStore"
 import TodoListPage from "./pages/TodoList/page"
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { HashRouter, Route, Routes } from "react-router-dom"
 import FeedbackPage from "./pages/Feedback/page"
 import NotFoundPage from "./pages/NotFound/page"
 
@@ -40,19 +40,19 @@ function App() {
     <div className="container">
       <BackgroundTitle />
 
-      <BrowserRouter>
+      <HashRouter >
         <main>
           <Header todos={todos} />
           <Routes>
             <Route
-              path="/Dushka"
+              path="/"
               element={<TodoListPage todos={todos} handleRemoveItem={handleRemoveItem} updateItem={updateItem} handleAddItem={handleAddItem} />} />
-            <Route path="/Dushka/feedback" element={<FeedbackPage />} />
+            <Route path="/feedback" element={<FeedbackPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Footer />
         </main>
-      </BrowserRouter>
+      </HashRouter>
 
 
 
