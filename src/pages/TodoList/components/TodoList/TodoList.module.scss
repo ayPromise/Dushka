@@ -18,6 +18,10 @@
     .todoItem{
         @include variables.shared-padding;
         border-bottom:2px solid variables.$header-background;
+
+        &:last-child{
+            border-bottom:none;
+        }
         
         display: flex;
         justify-content: space-between;
