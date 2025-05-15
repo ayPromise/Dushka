@@ -38,6 +38,7 @@ function App() {
 
   return (
     <div className="container">
+
       <HashRouter >
         <main>
           <BackgroundTitle />
@@ -52,8 +53,6 @@ function App() {
           <Footer />
         </main>
       </HashRouter>
-
-
 
     </div>
   )

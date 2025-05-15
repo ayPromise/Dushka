@@ -2,16 +2,15 @@ import React from 'react';
 import styles from './InputField.module.scss';
 
 interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    label?: string;
+    error?: string;
 }
 
 const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
-    ({ label, id, type = 'text', placeholder, value, onChange, required = false, ...props }, ref) => {
+    ({ error, id, type = 'text', placeholder, value, onChange, required = false, ...props }, ref) => {
         return (
             <div className={styles.inputField}>
-                {label && <label htmlFor={id} className={styles.label}>
-                    {label}
-                </label>}
+
+                {error && <span className={styles.error}>{error}</span>}
                 <input
                     ref={ref}
                     id={id}

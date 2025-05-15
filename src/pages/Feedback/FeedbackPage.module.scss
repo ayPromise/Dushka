@@ -80,7 +80,17 @@
       font-weight: bold;
       color: variables.$main-text;
     }
-    
+
+    .errorContainer{
+      position: relative;
+      .textareaError{
+        color: variables.$red-text;
+        position: absolute;
+        top: 0px;
+        padding-left: 10px;
+      }
+    }
+
     .textareaElement {
       border: 2px solid variables.$border-color;
       border-radius: 5px;
@@ -88,6 +98,8 @@
       padding-left: 10px;
       font-style: italic;
       resize: none;
+      margin-top: 15px;
+
       
       &::placeholder{
           color: lighten(variables.$main-text, 70);
