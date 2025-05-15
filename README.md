@@ -8,7 +8,7 @@ https://aypromise.github.io/Dushka/
 
 ![image](https://github.com/user-attachments/assets/bea93b51-dda3-49b0-8451-efce69f751a9)
 
-![image](https://github.com/user-attachments/assets/675875b2-9638-4131-985f-c063b5b6bb42)
+![image](https://github.com/user-attachments/assets/c3c6692f-9d91-431d-a2b9-983e7c3eb7bf)
 
 ![image](https://github.com/user-attachments/assets/7d5220a4-e50a-4669-888e-07a044951d84)
 
