@@ -1,4 +1,5 @@
 @use "../../../../styles/variables";
+@use "sass:color";
 
 .sidebar{
     @include variables.shared-padding;
@@ -32,7 +33,7 @@
             font-style: italic;
 
             &::placeholder{
-                color: lighten(variables.$main-text, 70);
+                color: color.adjust($color:variables.$main-text, $lightness: 70%);
             }
         }
     

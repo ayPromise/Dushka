@@ -1,4 +1,5 @@
 @use "../../styles/variables";
+@use "sass:color";
 
 .header{
     @include variables.shared-padding;
@@ -23,7 +24,7 @@
         gap:20px;
 
         .tabItem{
-            background-color: darken(variables.$main-background, 10);
+            background-color: color.adjust($color:variables.$main-background, $lightness: -10%);
             padding-top: 8px;
             padding-inline: 10px;
             padding-bottom: 20px;
@@ -44,12 +45,12 @@
                 background-color: variables.$main-background;
 
                 &:hover{
-                    background-color: darken(variables.$main-background,5);
+                    background-color: color.adjust($color:variables.$main-background, $lightness: -5%);
                 }
             }
 
             &:hover{
-                background-color: darken(variables.$main-background,25);
+                background-color: color.adjust($color:variables.$main-background, $lightness: -25%);
             }
         }
     }
@@ -70,7 +71,7 @@
         position: absolute;
         right: 20px;
 
-        @media(max-width:600px){
+        @media(max-width: variables.$layout-breakpoint-small){
             background-color: variables.$header-background;
             top: -40px;
             right: 0;

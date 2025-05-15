@@ -1,4 +1,5 @@
 @use "../../styles/variables";
+@use 'sass:color';
 
 .footer{
     width: 100%;
@@ -10,11 +11,11 @@
     }
 
     .link{
-        color:darken(variables.$dimmed-text, 5);
+        color: color.adjust($color: variables.$dimmed-text, $lightness: -5%);
         transition: color variables.$transition-duration;
 
         &:hover{
-            color:darken(variables.$dimmed-text, 10);
+            color: color.adjust($color: variables.$dimmed-text, $lightness: -10%);
         }
     }
 }

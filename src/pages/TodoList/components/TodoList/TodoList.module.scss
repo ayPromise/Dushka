@@ -1,4 +1,5 @@
 @use "../../../../styles/variables";
+@use "sass:color";
 
 
 .todoList{
@@ -33,7 +34,7 @@
         transition: background-color variables.$transition-duration;
         
         &:hover{
-            background-color: darken(variables.$main-background, 5);
+            background-color: color.adjust($color:variables.$main-background, $lightness: -5%);
         }
 
         &.completed{
@@ -53,8 +54,8 @@
             transition: color variables.$transition-duration, background-color variables.$transition-duration;
 
             &:hover{
-                color: darken(variables.$red-text, 10);
-                background-color: darken(variables.$sidebar-background, 5);
+                color: color.adjust($color:variables.$red-text, $lightness: -10%);
+                background-color: color.adjust($color:variables.$sidebar-background, $lightness: -5%);
             }
         }
     }
@@ -73,7 +74,7 @@
     }
       
     &::-webkit-scrollbar-thumb:hover {
-        background: darken(variables.$app-background, 10);
+        background-color: color.adjust($color:variables.$app-background, $lightness: -10%);
     }
 
 }
