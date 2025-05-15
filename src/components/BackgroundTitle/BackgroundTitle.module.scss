@@ -7,14 +7,17 @@
     letter-spacing: 50px;
 
     position:absolute;
-    top: 12px;
+    top: -45px;
     z-index: -1;
 
-    @media(max-width:720px){
+    width: 100%;
+    text-align: center;
+
+    @media(max-width:variables.$layout-breakpoint-medium){
         letter-spacing: 30px;
     }
 
-    @media(max-width:520px){
+    @media(max-width:variables.$layout-breakpoint-small){
         letter-spacing: 0px;
     }
 }

@@ -38,10 +38,9 @@ function App() {
 
   return (
     <div className="container">
-      <BackgroundTitle />
-
       <HashRouter >
         <main>
+          <BackgroundTitle />
           <Header todos={todos} />
           <Routes>
             <Route

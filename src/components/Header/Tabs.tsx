@@ -4,8 +4,6 @@ import styles from "./Header.module.scss"
 const Tabs = () => {
     const { pathname } = useLocation()
 
-    console.log(pathname)
-
     const links = [
         {
             href: "/Dushka",
@@ -25,8 +23,6 @@ const Tabs = () => {
 
                 if (urlArray.length !== 2)
                     correctPath = `/${urlArray.pop()}`
-
-                console.log(urlArray, correctPath)
 
                 return <a href={item.href} key={index} className={`${styles.tabItem} ${correctPath === pathname ? styles.active : ""}`}>
                     {item.title}

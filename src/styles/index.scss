@@ -13,7 +13,7 @@
 }
 
 
-ul,h1, h2, h3, h4{
+ul,h1, h2, h3, h4, body{
     margin:0;
     padding: 0;
 }
@@ -23,15 +23,20 @@ body{
     color: variables.$main-text;
 
     .container{
-        padding-block: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        min-height: 100vh;
     
         main{
+            position: relative;
+
             min-width: 300px;
             width: 1000px;
             min-height: 500px;
+
+            margin-top: 60px;
 
             display: flex;
             flex-direction: column;
