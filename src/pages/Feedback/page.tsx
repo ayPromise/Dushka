@@ -5,13 +5,6 @@ import styles from './FeedbackPage.module.scss';
 import { FaBook, FaEdit } from 'react-icons/fa';
 
 const FeedbackPage = () => {
-    const handleSendEmail = (name: string, email: string, message: string) => {
-        const subject = encodeURIComponent(`Feedback from ${name}`);
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-        const mailtoLink = `mailto:fatherpother@gmail.com?subject=${subject}&body=${body}`;
-        window.location.href = mailtoLink;
-    };
-
     const projects = [
         {
             title: 'Web Content Editor',
@@ -41,7 +34,7 @@ const FeedbackPage = () => {
             <div className={styles.gridContainer}>
                 {/* Top Left - FeedbackForm */}
                 <div className={styles.feedbackBlock}>
-                    <FeedbackForm onSend={handleSendEmail} />
+                    <FeedbackForm />
                 </div>
 
 

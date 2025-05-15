@@ -1,64 +1,98 @@
 import { useRef, useState } from "react";
+import sendEmail from "../../../utils/sendEmail"
 import InputField from "../../../components/InputField";
 import styles from "../FeedbackPage.module.scss"
+import Button from "../../../components/Button";
+import Loader from "../../../components/Loader";
 
-interface FeedbackFormProps {
-    onSend: (name: string, email: string, message: string) => void
-}
+const FeedbackForm: React.FC = () => {
 
-const FeedbackForm: React.FC<FeedbackFormProps> = ({ onSend }) => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-    const nameRef = useRef<HTMLInputElement>(null);
-    const emailRef = useRef<HTMLInputElement>(null);
-    const messageRef = useRef<HTMLInputElement>(null);
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: ''
+    })
+    const formRef = useRef<HTMLFormElement | null>(null)
+    const [errorMessage, setErrorMessage] = useState<string>("")
+    const [loading, setLoading] = useState<boolean>(false)
 
-    const handleSend = () => {
-        if (name && email && message) {
-            onSend(name, email, message);
-        } else {
-            alert('Please fill in all fields.');
+    const handleChangeFormData = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = event.target
+        setFormData((prev) => ({ ...prev, [name]: value }))
+    }
+
+    const validateForm = (): boolean => {
+        const { name, email, message } = formData;
+
+        if (!name.trim()) {
+            setErrorMessage("Name can't be empty");
+            return false;
         }
+
+        if (!email.trim()) {
+            setErrorMessage("Email can't be empty");
+            return false;
+        }
+
+        const emailRegex = /^[\w]+@([\w-]+\.)+[\w-]{2,4}$/;
+        if (!emailRegex.test(email)) {
+            setErrorMessage("Invalid email format");
+            return false;
+        }
+
+        if (!message.trim()) {
+            setErrorMessage("Please leave at least some compliments");
+            return false;
+        }
+
+        setErrorMessage("");
+        return true;
     };
 
+    const handleSend = async () => {
+        if (validateForm() && formRef.current) {
+            setLoading(true)
+            const resultMessage = await sendEmail(formRef.current)
+            if (resultMessage)
+                setLoading(false)
+
+        }
+
+    }
+
     return (
-        <div className={styles.feedbackForm}>
+        <form action={handleSend} className={styles.feedbackForm} ref={formRef}>
             <h2 className={styles.formTitle}>Leave your feedback or <span className={styles.formHighlighted}>take a look at my other projects</span></h2>
+            {errorMessage}
             <InputField
-                label="Name"
-                id="name"
+                name="name"
                 type="text"
                 placeholder="Your name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={formData.name}
+                onChange={handleChangeFormData}
                 required
-                ref={nameRef}
             />
             <InputField
-                label="Email"
-                id="email"
+                name="email"
                 type="email"
                 placeholder="Your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={formData.email}
+                onChange={handleChangeFormData}
                 required
-                ref={emailRef}
             />
-            <InputField
-                label="Message"
-                id="message"
-                type="text"
-                placeholder="Your message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
+            <textarea
+                name="message"
+                placeholder="Your best regards"
+                value={formData.message}
+                onChange={handleChangeFormData}
                 required
-                ref={messageRef}
+                className={styles.textareaElement}
+                rows={5}
             />
-            <button className={styles.sendButton} onClick={handleSend}>
-                Send
-            </button>
-        </div>
+            <Button onClick={handleSend}>
+                {loading ? <Loader /> : "Send"}
+            </Button>
+        </form>
     );
 };
 
