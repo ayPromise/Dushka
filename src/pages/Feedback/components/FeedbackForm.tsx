@@ -1,9 +1,7 @@
 import { useRef, useState } from "react";
 import sendEmail from "../../../utils/sendEmail"
-import InputField from "../../../components/InputField";
 import styles from "../FeedbackPage.module.scss"
-import Button from "../../../components/Button";
-import Loader from "../../../components/Loader";
+import { Button, InputField, Loader } from "../../../components";
 
 const FeedbackForm: React.FC = () => {
 

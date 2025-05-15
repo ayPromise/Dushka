@@ -1,9 +1,8 @@
 import { useState } from "react"
 import type { TodoItem } from "../../../../types/TodoItem"
-import Button from "../../../../components/Button"
 import SideActions from "./SideActions"
 import styles from "./SideBar.module.scss"
-import InputField from "../../../../components/InputField"
+import { Button, InputField } from "../../../../components"
 
 interface SideBarProps {
     handleAddItem: (newItem: TodoItem) => void
@@ -31,7 +30,6 @@ const SideBar: React.FC<SideBarProps> = ({ handleAddItem }) => {
     return (
         <aside className={styles.sidebar}>
 
-            {/** Add todo item */}
             <form className={styles.addForm}>
                 <h3 className={styles.addTitle}>Add new task</h3>
                 <InputField

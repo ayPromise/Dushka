@@ -1,4 +1,4 @@
-import Button from "../../../../components/Button"
+import { Button } from "../../../../components"
 import styles from "./SideBar.module.scss"
 
 const SideActions = () => {
