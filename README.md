@@ -45,6 +45,7 @@ Start the server
 
 - React: v19.1.0 - A JavaScript library for building user interfaces.
 - React Router DOM: v7.6.0 - For client-side routing.
+- EmailJS: v4.4.1 - For sending a feedback message to my email.
 - React Icons: v5.5.0 - To include icons in the app.
 - Sass/SCSS: v1.88.0 & v0.2.4 - For styling with enhanced CSS capabilities.
 - TypeScript: ~5.8.3 - For static typing and better scalability.
