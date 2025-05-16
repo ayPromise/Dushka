@@ -16,7 +16,7 @@ const SideBar: React.FC<SideBarProps> = ({ handleAddItem }) => {
         setContent(newValue)
     }
 
-    const handleClick = () => {
+    const handleAdd = () => {
         if (content) {
             const newItem: TodoItem = {
                 content,
@@ -30,7 +30,7 @@ const SideBar: React.FC<SideBarProps> = ({ handleAddItem }) => {
     return (
         <aside className={styles.sidebar}>
 
-            <form className={styles.addForm}>
+            <form action={handleAdd} className={styles.addForm}>
                 <h3 className={styles.addTitle}>Add new task</h3>
                 <InputField
                     id="name"
@@ -40,7 +40,7 @@ const SideBar: React.FC<SideBarProps> = ({ handleAddItem }) => {
                     onChange={handleChange}
                     required
                 />
-                <Button onClick={handleClick}>Add to list</Button>
+                <Button onClick={handleAdd}>Add to list</Button>
             </form>
 
             <SideActions />
