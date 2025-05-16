@@ -6,11 +6,11 @@ https://aypromise.github.io/Dushka/
 
 ## ✨Features Demo
 
-![image](https://github.com/user-attachments/assets/bea93b51-dda3-49b0-8451-efce69f751a9)
+![image](https://github.com/user-attachments/assets/2e392f67-12e5-444c-a377-f5555b52acd8)
 
-![image](https://github.com/user-attachments/assets/c3c6692f-9d91-431d-a2b9-983e7c3eb7bf)
+![image](https://github.com/user-attachments/assets/b33f6fc2-7e4a-4ed1-8ae3-6f6ab17e9ada)
 
-![image](https://github.com/user-attachments/assets/7d5220a4-e50a-4669-888e-07a044951d84)
+![image](https://github.com/user-attachments/assets/a94c9830-36c3-43fb-8f41-4e58289c8a16)
 
 - Add new todo items with ease.
 - Mark tasks as completed and track progress.
