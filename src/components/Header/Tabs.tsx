@@ -25,7 +25,9 @@ const Tabs = () => {
                     correctPath = `/${urlArray.pop()}`
 
                 return <a href={item.href} key={index} className={`${styles.tabItem} ${correctPath === pathname ? styles.active : ""}`}>
+                    <div className={styles.leftCurvedEdge}></div>
                     {item.title}
+                    <div className={styles.rightCurvedEdge}></div>
                 </a>
             }
             )}
